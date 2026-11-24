@@ -1,68 +1,131 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="مكتبة بحر أمة الإسلامية للكتب والدروس والمحاضرات الصوتية">
-<title>مكتبة بحر أمة الإسلامية</title>
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="وكالة بحر أمة الإخبارية: تابع آخر الأخبار المحلية والعربية والدولية والرياضية والاقتصادية.">
+    <meta name="theme-color" content="#10243e">
+    <title>وكالة بحر أمة الإخبارية</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-    <div class="logo">📚 مكتبة بحر أمة</div>
-    <p>منارة العلم والمعرفة الإسلامية</p>
+<header class="site-header">
+    <div class="brand">
+        <div class="brand-icon">📰</div>
+        <div>
+            <h1>وكالة بحر أمة الإخبارية</h1>
+            <p>مصدرك لمتابعة الأحداث والأخبار</p>
+        </div>
+    </div>
+
     <nav>
         <a href="#home">الرئيسية</a>
-        <a href="#books">الكتب</a>
-        <a href="#audio">الصوتيات</a>
-        <a href="#about">عن المكتبة</a>
+        <a href="#latest">آخر الأخبار</a>
+        <a href="#chad">أخبار تشاد</a>
+        <a href="#world">أخبار العالم</a>
+        <a href="#sports">الرياضة</a>
+        <a href="#about">عن الوكالة</a>
     </nav>
 </header>
 
 <section class="hero" id="home">
-    <h1>مرحباً بكم في مكتبة بحر أمة الإسلامية</h1>
-    <p>مكتبة علمية تجمع الكتب الإسلامية والدروس والمحاضرات الصوتية.</p>
-    <a href="#books" class="button">تصفح المكتبة</a>
+    <div class="hero-content">
+        <span class="hero-label">وكالة بحر أمة الإخبارية</span>
+        <h2>الأخبار بين يديك</h2>
+        <p>نتابع الأحداث وننقل إليكم الأخبار بمهنية ووضوح.</p>
+        <a href="#latest" class="main-button">تصفح آخر الأخبار</a>
+    </div>
 </section>
 
-<section class="search">
-    <input type="search" id="search" placeholder="ابحث عن كتاب أو درس...">
-</section>
+<div class="breaking">
+    <strong>آخر المستجدات</strong>
+    <span>مرحباً بكم في وكالة بحر أمة الإخبارية</span>
+</div>
 
 <main>
 
-<section id="books">
-    <h2>📖 المكتبة الإسلامية</h2>
-    <div class="grid" id="bookList">
-        <p>ستظهر الكتب هنا بعد إضافتها.</p>
+<section class="search-section">
+    <h2>ابحث عن خبر</h2>
+    <input type="search" id="search" placeholder="اكتب عنوان الخبر أو كلمة للبحث...">
+</section>
+
+<section id="latest">
+    <div class="section-heading">
+        <h2>🗞️ آخر الأخبار</h2>
+        <span>تابع أحدث المنشورات</span>
+    </div>
+
+    <div class="news-grid" id="newsList">
+
+        <article class="news-card" data-category="chad">
+            <div class="news-image">🇹🇩</div>
+            <div class="news-content">
+                <span class="category-tag">أخبار تشاد</span>
+                <h3>مرحباً بكم في وكالة بحر أمة الإخبارية</h3>
+                <p>هذه مساحة مخصصة لنشر الأخبار والتقارير المتعلقة بتشاد والعالم.</p>
+                <div class="news-meta">خبر تجريبي</div>
+            </div>
+        </article>
+
+        <article class="news-card" data-category="world">
+            <div class="news-image">🌍</div>
+            <div class="news-content">
+                <span class="category-tag">أخبار العالم</span>
+                <h3>تابع الأخبار العربية والدولية</h3>
+                <p>ستجد هنا الأخبار والتقارير المتعلقة بالأحداث العربية والدولية.</p>
+                <div class="news-meta">خبر تجريبي</div>
+            </div>
+        </article>
+
+        <article class="news-card" data-category="sports">
+            <div class="news-image">⚽</div>
+            <div class="news-content">
+                <span class="category-tag">الرياضة</span>
+                <h3>الأخبار الرياضية في مكان واحد</h3>
+                <p>قسم مخصص لمتابعة أخبار الرياضة والبطولات والفرق.</p>
+                <div class="news-meta">خبر تجريبي</div>
+            </div>
+        </article>
+
     </div>
 </section>
 
-<section id="audio">
-    <h2>🎧 الدروس والمحاضرات الصوتية</h2>
-
-    <div class="category">
-        <h3>دروس الدكتور صالح محمد هارون</h3>
-        <div class="grid" id="audioList">
-            <p>ستظهر الدروس الصوتية هنا بعد إضافتها.</p>
-        </div>
+<section id="chad">
+    <div class="section-heading">
+        <h2>🇹🇩 أخبار تشاد</h2>
     </div>
+    <p class="section-description">مساحة لنشر الأخبار المحلية والتقارير من مختلف مناطق تشاد.</p>
 </section>
 
-<section id="about">
-    <h2>عن المكتبة</h2>
+<section id="world">
+    <div class="section-heading">
+        <h2>🌍 الأخبار العربية والدولية</h2>
+    </div>
+    <p class="section-description">تابع أبرز الأخبار والأحداث من العالم العربي ودول العالم.</p>
+</section>
+
+<section id="sports">
+    <div class="section-heading">
+        <h2>⚽ الأخبار الرياضية</h2>
+    </div>
+    <p class="section-description">أخبار المباريات والبطولات والرياضة المحلية والعالمية.</p>
+</section>
+
+<section id="about" class="about-section">
+    <h2>عن الوكالة</h2>
     <p>
-        مكتبة بحر أمة الإسلامية مشروع لنشر العلم والمعرفة،
-        وتيسير الوصول إلى الكتب الإسلامية والدروس والمحاضرات
-        العلمية للقراء والباحثين وطلاب العلم.
+        وكالة بحر أمة الإخبارية منصة إعلامية تهدف إلى نشر الأخبار
+        والتقارير المحلية والعربية والدولية، وتقديم المعلومات
+        للقراء بصورة واضحة ومنظمة.
     </p>
 </section>
 
 </main>
 
 <footer>
-    <p>مكتبة بحر أمة الإسلامية</p>
+    <h2>وكالة بحر أمة الإخبارية</h2>
+    <p>منصة لنشر الأخبار والتقارير</p>
     <p>جميع الحقوق محفوظة © 2026</p>
 </footer>
 
