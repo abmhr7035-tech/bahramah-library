@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    background: #f5f7f3;
+    color: #26352d;
+    line-height: 1.8;
+}
+
+header {
+    background: #174d38;
+    color: white;
+    text-align: center;
+    padding: 25px 12px;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+}
+
+nav {
+    margin-top: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: #e7c875;
+}
+
+.hero {
+    text-align: center;
+    padding: 65px 15px;
+    background: #e3eee5;
+}
+
+.hero h1 {
+    color: #174d38;
+    font-size: 28px;
+}
+
+.button {
+    display: inline-block;
+    background: #174d38;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.search {
+    text-align: center;
+    padding: 25px 12px;
+}
+
+input {
+    width: 90%;
+    max-width: 500px;
+    padding: 13px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+main {
+    max-width: 1050px;
+    margin: auto;
+    padding: 15px;
+}
+
+section {
+    margin-bottom: 45px;
+}
+
+h2 {
+    color: #174d38;
+    border-bottom: 2px solid #d7c27b;
+    padding-bottom: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #00000012;
+}
+
+.card a {
+    color: #174d38;
+    font-weight: bold;
+}
+
+footer {
+    background: #174d38;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@media(max-width: 600px) {
+    .hero h1 {
+        font-size: 22px;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+}
