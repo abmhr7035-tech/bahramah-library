@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>وكالة بحر أمة الإخبارية</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="site-header">
+<div class="brand">
+<div class="brand-icon">📰</div>
+<div>
+<h1>وكالة بحر أمة الإخبارية</h1>
+<p>مصدرك لمتابعة الأحداث والأخبار</p>
+</div>
+</div>
+<nav>
+<a href="/">الرئيسية</a>
+<a href="#latest">آخر الأخبار</a>
+<a href="#about">عن الوكالة</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<span class="hero-label">وكالة بحر أمة الإخبارية</span>
+<h2>الأخبار بين يديك</h2>
+<p>نتابع الأحداث وننقل إليكم الأخبار بمهنية ووضوح.</p>
+<a href="#latest" class="main-button">تصفح الأخبار</a>
+</div>
+</section>
+
+<main>
+<section id="latest">
+<div class="section-heading">
+<h2>🗞️ آخر الأخبار</h2>
+<span>أحدث المنشورات</span>
+</div>
+
+<div class="news-grid">
+{% for item in news %}
+<article class="news-card">
+{% if item.image %}
+<img src="{{ url_for('static', filename='uploads/' + item.image) }}"
+alt="{{ item.title }}" style="width:100%;height:180px;object-fit:cover">
+{% else %}
+<div class="news-image">📰</div>
+{% endif %}
+<div class="news-content">
+<span class="category-tag">{{ item.category }}</span>
+<h3>{{ item.title }}</h3>
+<p>{{ item.summary }}</p>
+<div class="news-meta">{{ item.created_at }}</div>
+<a href="{{ url_for('news_detail', news_id=item.id) }}">اقرأ الخبر كاملاً ←</a>
+</div>
+</article>
+{% else %}
+<p>لا توجد أخبار منشورة حالياً. تابعونا قريباً.</p>
+{% endfor %}
+</div>
+</section>
+
+<section id="about" class="about-section">
+<h2>عن الوكالة</h2>
+<p>وكالة بحر أمة الإخبارية منصة إعلامية تهدف إلى نشر الأخبار والتقارير المحلية والعربية والدولية.</p>
+</section>
+</main>
+
+<footer>
+<h2>وكالة بحر أمة الإخبارية</h2>
+<p>منصة لنشر الأخبار والتقارير</p>
+<p>جميع الحقوق محفوظة © 2026</p>
+</footer>
+</body>
+</html>

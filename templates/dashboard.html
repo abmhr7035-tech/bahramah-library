@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لوحة تحكم بحر أمة</title>
+<link rel="stylesheet" href="/static/style.css">
+<style>
+.panel{max-width:1000px;margin:30px auto;background:white;padding:20px;border-radius:12px}
+button,.btn{background:#10243e;color:white;padding:10px 17px;border:0;border-radius:6px;text-decoration:none;cursor:pointer}
+.delete{background:#b52d35}
+.item{border-bottom:1px solid #ddd;padding:15px 0}
+</style>
+</head>
+<body>
+<header class="site-header">
+<h1>لوحة تحكم وكالة بحر أمة</h1>
+</header>
+<main class="panel">
+<h2>مرحباً بك في لوحة الإدارة</h2>
+<p><a class="btn" href="{{ url_for('add_news') }}">➕ نشر خبر جديد</a></p>
+{% with messages = get_flashed_messages() %}
+{% for message in messages %}
+<p>{{ message }}</p>
+{% endfor %}
+{% endwith %}
+<h3>الأخبار المنشورة</h3>
+{% for item in news %}
+<div class="item">
+<h3>{{ item.title }}</h3>
+<p>{{ item.category }} | {{ item.created_at }}</p>
+<form method="POST" action="{{ url_for('delete_news', news_id=item.id) }}"
+onsubmit="return confirm('هل أنت متأكد من حذف هذا الخبر؟')">
+<input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+<button class="delete" type="submit">حذف الخبر</button>
+</form>
+</div>
+{% else %}
+<p>لا توجد أخبار حتى الآن.</p>
+{% endfor %}
+<hr>
+<form method="POST" action="{{ url_for('logout') }}">
+<button type="submit">تسجيل الخروج</button>
+</form>
+<p><a href="/">زيارة الموقع</a></p>
+</main>
+</body>
+</html>

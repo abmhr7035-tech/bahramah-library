@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نشر خبر جديد</title>
+<link rel="stylesheet" href="/static/style.css">
+<style>
+.form-box{max-width:700px;margin:30px auto;background:white;padding:25px;border-radius:12px}
+input,textarea,select{width:100%;padding:12px;margin:10px 0;border:1px solid #ccc;border-radius:7px;font-family:inherit}
+textarea{min-height:180px}
+button{background:#10243e;color:white;padding:13px 25px;border:0;border-radius:7px;width:100%}
+</style>
+</head>
+<body>
+<div class="form-box">
+<h2>📝 نشر خبر جديد</h2>
+{% with messages = get_flashed_messages() %}
+{% for message in messages %}
+<p>{{ message }}</p>
+{% endfor %}
+{% endwith %}
+<form method="POST" enctype="multipart/form-data">
+<input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+<label>عنوان الخبر</label>
+<input type="text" name="title" maxlength="200" required>
+<label>ملخص الخبر</label>
+<textarea name="summary" maxlength="500" required></textarea>
+<label>تفاصيل الخبر</label>
+<textarea name="content" required></textarea>
+<label>قسم الخبر</label>
+<select name="category" required>
+<option value="أخبار تشاد">أخبار تشاد</option>
+<option value="أخبار العالم">أخبار العالم</option>
+<option value="السياسة">السياسة</option>
+<option value="الاقتصاد">الاقتصاد</option>
+<option value="الرياضة">الرياضة</option>
+<option value="التكنولوجيا">التكنولوجيا</option>
+</select>
+<label>صورة الخبر</label>
+<input type="file" name="image" accept=".jpg,.jpeg,.png,.webp">
+<button type="submit">نشر الخبر</button>
+</form>
+<p><a href="{{ url_for('dashboard') }}">العودة إلى لوحة التحكم</a></p>
+</div>
+</body>
+</html>
