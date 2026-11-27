@@ -1,0 +1,33 @@
+media: static/images
+
+content:
+  - name: news
+    label: الأخبار
+    type: file
+    path: data/news.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: عنوان الخبر
+        type: string
+
+      - name: category
+        label: قسم الخبر
+        type: string
+
+      - name: summary
+        label: ملخص الخبر
+        type: text
+
+      - name: body
+        label: تفاصيل الخبر
+        type: rich-text
+
+      - name: image
+        label: صورة الخبر
+        type: image
+
+      - name: date
+        label: تاريخ النشر
+        type: date
